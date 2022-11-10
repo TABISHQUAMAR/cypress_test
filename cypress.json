@@ -1,0 +1,9 @@
+{   
+    "env": {
+        "password":"secret_sauce"
+    },
+    "chromeWebSecurity": false,
+    "viewportWidth": 1500,
+    "viewportHeight": 800
+    
+}
