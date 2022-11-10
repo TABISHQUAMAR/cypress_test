@@ -7,6 +7,17 @@ describe('Test', () => {
         cy.get('#password').type(password);
         cy.get('#login-button').click();
 
+        cy.wait(2000)
+        cy.get('[data-test="product_sort_container"]').select('Name (Z to A)') 
+        cy.get('[data-test="product_sort_container"]').should('have.value', 'za')
+        cy.log('Products sorted Z to A')
+
+        cy.wait(2000)
+        cy.get('[data-test="product_sort_container"]').select('Price (high to low)')
+        cy.get('[data-test="product_sort_container"]').should('have.value', 'hilo')
+        cy.log('Products sorted on price High to Low')
+        cy.wait(2000)
+        
         cy.contains('.inventory_item', 'Sauce Labs Fleece Jacket').contains('Add to cart').click()
         cy.wait(2000)
 
